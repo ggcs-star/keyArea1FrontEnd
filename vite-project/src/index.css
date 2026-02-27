@@ -1,0 +1,338 @@
+@font-face {
+    font-family: helvetica;
+    src: url('/src/assets/fonts/Helvetica.ttf');
+}
+@font-face {
+    font-family: helveticabold;
+    src: url('/src/assets/fonts/Helvetica-Bold.ttf');
+}
+@font-face {
+    font-family: helveticalight;
+    src: url('/src/assets/fonts/helvetica-light-587ebe5a59211.ttf');
+}
+
+@font-face {
+    font-family: montserratregular;
+    src: url('/src/assets/fonts/Montserrat-Regular.ttf');
+}
+
+@font-face {
+    font-family: montserratlight;
+    src: url('/src/assets/fonts/Montserrat-Light.ttf');
+}
+
+@font-face {
+    font-family: montserratbold;
+    src: url('/src/assets/fonts/Montserrat-Bold.ttf');
+}
+
+@font-face {
+    font-family: montserratextrabold;
+    src: url('/src/assets/fonts/Montserrat-ExtraBold.ttf');
+}
+
+@font-face {
+    font-family: robotoregular;
+    src: url('/src/assets/fonts/Roboto-Regular.ttf');
+}
+
+
+@import "tailwindcss";
+@theme {
+    /* --color-*: initial; */
+    --color-primary: #000000;
+    --color-darkprimary: #52b1fd;
+    --color-primaryBtn: #21318d;
+    --color-darkprimaryBtn: #52b1fd;
+    --color-secondary: #53018c;
+    --font-poppins: Poppins, sans-serif;
+    --font-montserratlight: montserratlight, "sans-sarif";
+    --font-montserratregular: montserratregular, "sans-sarif";
+    --font-montserratbold: montserratbold, "sans-sarif";
+    --font-montserratextrabold: montserratextrabold, "sans-sarif";
+    --font-robotoregular: robotoregular, "sans-sarif";
+    --font-helvetica: helvetica, "sans-sarif";
+    --font-helveticabold: helveticabold, "sans-sarif";
+    --font-helveticalight: helveticalight, "sans-sarif";
+    --shadow-header: 0px 2px 10px 5px rgba(1,15,28,0.1);
+}
+
+.lora {
+    font-family: "Lora", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: italic;
+  }
+
+/* body,
+html {
+    overflow-x: hidden;
+} */
+
+/* Ensure Leaflet does not apply default square */
+.leaflet-div-icon {
+  background: transparent !important;
+  border: none !important;
+}
+
+/* MAIN PIN WRAPPER */
+.custom-marker-pin {
+  position: relative;
+  transition: all 0.3s ease-out;
+  transform-origin: bottom;
+  z-index: 10;
+}
+
+.custom-marker-pin:hover {
+  transform: scale(1.10) translateY(-8px);
+  z-index: 100;
+}
+
+/* PRICE LABEL BOX */
+.price-label {
+  padding: 6px 12px;
+  border-radius: 10px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #0f172a;
+  background: white;
+  border: 1px solid #d1d5db;
+  white-space: nowrap;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+  transition: all 0.2s ease-in-out;
+}
+
+.custom-marker-pin:hover .price-label {
+  background: #0f172a;
+  color: white;
+  border-color: #0f172a;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+}
+
+/* TRIANGLE BELOW PRICE */
+.price-triangle {
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid white;
+  margin-top: -1px;
+  transition: all 0.2s ease-in-out;
+}
+
+.custom-marker-pin:hover .price-triangle {
+  border-top-color: #0f172a;
+}
+
+/* SHADOW ELLIPSE */
+.price-shadow {
+  width: 16px;
+  height: 4px;
+  margin-top: 0px;
+  background: rgba(0,0,0,0.25);
+  border-radius: 50%;
+  filter: blur(2px);
+  opacity: 0.6;
+  transition: all 0.2s ease-in-out;
+}
+
+/* 600px wide marker */
+.wide-marker {
+  width: 600px;
+  height: 60px;
+  background: #0f172a;
+  color: white;
+  font-size: 22px;
+  font-weight: 800;
+  border-radius: 14px;
+  border: 3px solid white;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+  pointer-events: auto; /* Needed so Leaflet allows clicking */
+}
+
+/* remove default leaflet square */
+.leaflet-div-icon {
+  background: transparent !important;
+  border: none !important;
+}
+
+/* cluster marker */
+.cluster-marker-inner {
+  background: #0f172a;
+  color: white;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 700;
+  border: 3px solid white;
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.25);
+}
+
+
+/* Make Splide arrows modern */
+.custom-splide .splide__arrow {
+  background: rgba(0, 0, 0, 0.6); /* dark background */
+  border-radius: 9999px; /* fully rounded */
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.custom-splide .splide__arrow svg {
+  fill: #fbbf24; /* amber-400 arrow color */
+  width: 1.5rem;
+  height: 1.5rem;
+  transition: fill 0.3s ease;
+}
+
+.custom-splide .splide__arrow:hover svg {
+  fill: #ffffff; /* white on hover */
+}
+
+
+
+
+
+
+
+
+
+/* .button-container {
+    position: relative;
+}
+
+.slide-button {
+    font-size: 18px;
+    color: #fff;
+    background-color: #ef4444;
+    border: 2px solid #ef4444;
+    border-radius: 5px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    outline: none;
+    transition: color 0.4s, background-color 0.4s;
+    z-index: 1;
+}
+
+.slide-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ef4444;
+    border: 2px solid #ef4444;
+    transition: all 0.4s ease-in-out;
+    z-index: -1;
+}
+
+.slide-button:hover::before {
+    left: 100%;
+    border: 2px solid #ef4444;
+
+}
+
+.slide-button:hover {
+    color: #ef4444;
+    background-color: transparent;
+    border: 2px solid #ef4444;
+} */
+
+
+
+
+
+
+/* a {
+    display: inline-block;
+    position: relative;
+    color: #0087ca;
+    text-decoration: none;
+  } */
+/* .underline-hover::after {
+    content: '';
+    position: absolute;
+    width: 70%;
+    transform: scaleX(0);
+    height: 0.25em;
+    top: 0;
+    left: 20%;
+    background: var(--color-primary);
+    transform-origin: bottom right;
+}
+
+.underline-hover:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+} */
+
+.underline-hover::after {
+  content: '';
+  position: absolute;
+  width: 70%;
+  transform: scaleX(0);
+  top: 0;
+  left: 20%;
+  background: var(--color-primary);
+  transform-origin: bottom right;
+}
+
+.underline-hover:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+  color: white;
+}
+
+.animated {
+    animation-duration: 1s;
+    animation-fill-mode: both;
+  }
+  
+  .slideInLeft {
+    animation-name: slideInLeft;
+  }
+  
+  .slideInRight {
+    animation-name: slideInRight;
+  }
+  
+  @keyframes slideInLeft {
+    0% {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideInRight {
+    0% {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+.inquiry-sticky {
+  position: sticky;
+  top: 6rem;
+  z-index: 10;
+}
